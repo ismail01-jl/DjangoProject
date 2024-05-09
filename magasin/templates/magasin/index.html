@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>THE Magasin</title>
+    <link rel="stylesheet" href="{% static 'css/stylee_index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha384-eaGiL7haTqjWB/jrDXFxrLhlvRMvlEDjaiDJsH0pfdq1aXerSzLNMp96w2tmR4N" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/53c66b946a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="accueil-header">
+        <div class="logo">
+            <!-- <img src="{% static 'media/TO_Project_Logo.png' %}" alt="">-->
+            <i class="fa-brands fa-shopify"></i> <span>THE Magasin</span>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Welcome To Our<br> Online Shop</h1>
+            <p>Discover our high quality products</p>
+            <a href="{% url 'magasin:catalogue' %}" class="shop-now-btn">
+                Shop Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="banner-image">
+            <img src="{%  static 'media/bannerimage.png' %}" alt="Banner Image">
+        </div>
+    </section>
+    <footer>
+        <div class="first-footer">
+            <div class="About-lafacture">
+                <h2>The Magasin</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Accusamus eligendi debitis possimus quibusdam rem velit? Facere,
+                nemo autem officiis distinctio explicabo doloribus ipsam sequi ut qui, velit ea, quibusdam illum?</p>
+                <img src="" alt="" width="10%">
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Extra</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Media</h3>
+                    <ul class="social-media">
+                        <li><a href="#"><i class="fab fa-facebook"> </i> facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"> </i>twitter</a></li>
+                        <li><a href="#"> <i class="fab fa-instagram"> </i>instagram</a></li>
+                        <li><a href="#"> <i class="fab fa-linkedin"> </i>linkedin</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="second-footer">
+            <p>&copy;2024 created by JELLITI ISMAIL. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

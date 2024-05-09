@@ -1,0 +1,52 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+<style>
+    h1 {
+        color: #333;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+        
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+<div class="titre">
+    <h2 style="text-align: center;">Manip Produit ...... </h2>
+</div>
+<form method='POST' class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="sumit" class="btn-eng">save</button>
+</form>
+{% endblock %}

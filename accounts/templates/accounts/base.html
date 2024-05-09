@@ -1,0 +1,17 @@
+<ul class="navbar-nav ml-auto">
+    {% if user.is_authenticated %}
+    <li class="nav-item active">
+        <a class="nav-link" href="#">{{ user }},</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'logout' %}">Déconnexion</a>
+    </li>
+    {% else %}
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'login' %}">Connexion</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'magasin:register' %}">Inscription</a>
+    </li>
+    {% endif %}
+</ul>

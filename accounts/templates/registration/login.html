@@ -1,0 +1,74 @@
+{% extends "magasin/base.html" %}
+{% block content %}
+<style>
+    /* Style du formulaire de connexion */
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-container label {
+        margin-bottom: 10px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-container button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-container button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+<h2>Connexion</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {% for field in form %}
+        <tr>
+            <td>{{ field.label_tag }}</td>
+            <td>{{ field }}</td>
+        </tr>
+        {% for error in field.errors %}
+        <tr>
+            <td></td>
+            <td class="alert alert-danger">{{ error }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+    <button type="submit">Se connecter</button>
+</form>
+<div>
+    <small>
+        Pas encore inscrite? <a href="{% url 'magasin:register' %}">S'inscrire</a><br>
+        Mot de passe oublié ? <a href="#">Renouveler mon mot de passe</a>
+    </small>
+</div>
+{% endblock %}

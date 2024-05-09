@@ -1,0 +1,16 @@
+<!-- post_confirm_delete.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation de suppression</title>
+</head>
+<body>
+    <h1>Êtes-vous sûr de vouloir supprimer cet article ?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmer la suppression</button>
+    </form>
+</body>
+</html>

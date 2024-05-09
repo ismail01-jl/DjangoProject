@@ -1,0 +1,79 @@
+{% extends "magasin/base.html" %}
+{% block content %}
+<style>
+    .form-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-table {
+        width: 100%;
+    }
+
+    .form-error {
+        color: red;
+    }
+
+    .form-submit-btn {
+        padding: 10px 20px;
+        background-color: rgb(238, 208, 38);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 150px;
+    }
+
+    .form-submit-btn:hover {
+        background-color: rgb(238, 203, 7);
+    }
+
+    .form-footer {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .form-link {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .form-link:hover {
+        text-decoration: underline;
+    }
+</style>
+<h2 class="form-title">S'inscrire</h2>
+<form method="post" class="form-container">
+    {% csrf_token %}
+    <table class="form-table">
+        {% for field in form %}
+        <tr>
+            <td>{{ field.label_tag }}</td>
+            <td>{{ field }}</td>
+        </tr>
+        {% for error in field.errors %}
+        <tr>
+            <td></td>
+            <td class="form-error">{{ error }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+    <button type="submit" class="form-submit-btn">s'inscrire</button>
+</form>
+<div class="form-footer">
+    <small>
+        Déjà inscrit.e?
+        <a href="{% url 'login' %}" class="form-link">Se connecter</a>
+    </small>
+</div>
+{% endblock %}

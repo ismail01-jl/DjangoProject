@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de l'article</title>
+    <style>
+        /* Style pour la carte de l'article */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            color: #777;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 1 0px;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">{{ posts.title }}</h1>
+        </div>
+        <div class="card-body">
+            <img src="{{ post.image.url }}" alt="Image de l'article">
+            <p>{{ posts.content }}</p>
+            {% for content in posts.contents %}
+            <p>{{ content }}</p>
+            {% endfor %}
+        </div>
+        <div class="card-footer">
+            <p>Publié par {{ posts.author }} le {{ posts.created_on }}</p>
+            <a href="{% url 'blog:post_update' posts.pk %}" class="btn btn-primary">Modifier</a>
+            <a href="{% url 'blog:post_delete' posts.pk %}" class="btn btn-danger">Supprimer</a>
+        </div>
+    </div>
+</body>
+
+</html>

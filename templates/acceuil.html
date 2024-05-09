@@ -1,0 +1,88 @@
+<!DOCTYPE html">
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>THE Magasin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha384-eaGiL7haTqjWB/jrDXFxrLhlvRMvlEDjaiDJsH0pfdq1aXerSzLNMp96w2tmR4N" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/53c66b946a.js" crossorigin="anonymous"></script>
+    <style>
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        #conteneur {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #header {
+            background-color: #333;
+            color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #header a {
+            text-decoration: none;
+            color: #eee;
+        }
+
+        nav {
+            background-color: #2c3e50;
+        }
+
+        #menu {
+            list-style: none;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #menu li {
+            display: inline-block;
+        }
+
+        #menu a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        #menu a:hover {
+            background-color: #1a252f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conteneur">
+        <h1 id="header"><a href="#" title="Colored Design - Accueil"><span>Welcome</span></a></h1>
+        <nav>
+            <ul id="menu">
+                <li><a href="{% url 'magasin:index' %}">Application n°1 : Magasin</a></li>
+                <li><a href="">Application n°2</a></li>
+                <li><a href="">Application n°3</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
